@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ffffff;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Base Styles */
+body {
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Focus Styles */
+*:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Form Element Styles */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="search"],
+textarea,
+select {
+  @apply appearance-none rounded-md border border-gray-300 px-3 py-2 shadow-sm;
+  @apply focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500;
+}
+
+/* Button Styles */
+.btn {
+  @apply inline-flex items-center justify-center px-4 py-2 border border-transparent;
+  @apply text-base font-medium rounded-md shadow-sm;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-primary {
+  @apply text-white bg-blue-600 hover:bg-blue-700;
+  @apply focus:ring-blue-500;
+}
+
+.btn-secondary {
+  @apply text-blue-700 bg-blue-100 hover:bg-blue-200;
+  @apply focus:ring-blue-500;
+}
+
+.btn-outline {
+  @apply text-gray-700 bg-white border-gray-300 hover:bg-gray-50;
+  @apply focus:ring-blue-500;
+}
+
+/* Container Styles */
+.container {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold tracking-tight;
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Aspect Ratio Classes */
+.aspect-w-3 {
+  position: relative;
+  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+}
+
+.aspect-w-3 > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.aspect-h-3 {
+  --tw-aspect-h: 3;
+}
+
+.aspect-w-4 {
+  position: relative;
+  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+}
+
+.aspect-w-4 > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.aspect-h-3 {
+  --tw-aspect-h: 3;
+}
