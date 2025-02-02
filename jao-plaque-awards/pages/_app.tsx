@@ -1,24 +1,21 @@
-import React from 'react';
-import { AppProps } from 'next/app';
-import { Geist, Geist_Mono } from "next/font/google";
+import type { AppProps } from 'next/app';
+import { useEffect } from 'react';
+import { getInitialDarkMode } from '@/lib/darkMode';
+import { inter } from '../lib/fonts';
 import '../styles/globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
+export default function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    // Apply initial dark mode on mount
+    const isDark = getInitialDarkMode();
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    }
+  }, []);
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
-
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
-    <div className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <main className={`${inter.className}`}>
       <Component {...pageProps} />
-    </div>
+    </main>
   );
-};
-
-export default MyApp; 
+} 

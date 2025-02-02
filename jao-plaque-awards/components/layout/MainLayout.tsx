@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Navbar from '../ui/Navbar';
 import { STYLE_VARIANTS } from '../../types/references';
+import Footer from '../ui/Footer';
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -25,18 +26,12 @@ const MainLayout: React.FC<MainLayoutProps> = ({
         <meta property="og:type" content="website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="min-h-screen flex flex-col bg-gray-50">
+      <div className="min-h-screen flex flex-col bg-background dark:bg-gray-900">
         <Navbar />
-        <main className={`flex-grow ${STYLE_VARIANTS.container.default} py-8`}>
+        <main className="flex-grow">
           {children}
         </main>
-        <footer className="bg-white border-t">
-          <div className={`${STYLE_VARIANTS.container.default} py-6`}>
-            <p className="text-center text-gray-600">
-              © {new Date().getFullYear()} Jao Plaque Awards. All rights reserved.
-            </p>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
   );

@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import MainLayout from '../../components/layout/MainLayout';
 import { STYLE_VARIANTS } from '../../types/references';
+import { AwardsSkeleton } from '@/components/skeletons/AwardsSkeleton';
 
 const AcrylicAwards: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <MainLayout>
+        <AwardsSkeleton />
+      </MainLayout>
+    );
+  }
   const awards = [
     {
       id: 1,
@@ -77,14 +96,14 @@ const AcrylicAwards: React.FC = () => {
       description="Explore our modern collection of acrylic awards and trophies. Contemporary designs that combine clarity with style for impressive recognition pieces."
     >
       {/* Hero Section */}
-      <section className="bg-gray-50">
+      <section className="bg-muted dark:bg-gray-900">
         <div className={`${STYLE_VARIANTS.container.default} py-12 sm:py-16`}>
           <div className="max-w-7xl mx-auto">
             <div className="text-center">
-              <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
+              <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">
                 Acrylic Awards & Trophies
               </h1>
-              <p className="mt-4 text-xl text-gray-500 max-w-3xl mx-auto">
+              <p className="mt-4 text-xl text-gray-500 dark:text-gray-300 max-w-3xl mx-auto">
                 Contemporary acrylic awards that blend modern aesthetics with crystal-clear quality. 
                 Perfect for corporate recognition, sports achievements, and special occasions.
               </p>
@@ -94,41 +113,41 @@ const AcrylicAwards: React.FC = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-background dark:bg-gray-800">
         <div className={STYLE_VARIANTS.container.default}>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <div className="text-blue-600">
+            <div className="bg-muted dark:bg-gray-700 p-6 rounded-lg">
+              <div className="text-blue-600 dark:text-blue-400">
                 <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
-              <h3 className="mt-4 text-lg font-medium text-gray-900">Modern Aesthetics</h3>
-              <p className="mt-2 text-base text-gray-500">
+              <h3 className="mt-4 text-lg font-medium text-gray-900 dark:text-white">Modern Aesthetics</h3>
+              <p className="mt-2 text-base text-gray-500 dark:text-gray-300">
                 Contemporary designs that make a bold statement.
               </p>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <div className="text-blue-600">
+            <div className="bg-muted dark:bg-gray-700 p-6 rounded-lg">
+              <div className="text-blue-600 dark:text-blue-400">
                 <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
                 </svg>
               </div>
-              <h3 className="mt-4 text-lg font-medium text-gray-900">Color Options</h3>
-              <p className="mt-2 text-base text-gray-500">
+              <h3 className="mt-4 text-lg font-medium text-gray-900 dark:text-white">Color Options</h3>
+              <p className="mt-2 text-base text-gray-500 dark:text-gray-300">
                 Available in clear, frosted, and vibrant colors.
               </p>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <div className="text-blue-600">
+            <div className="bg-muted dark:bg-gray-700 p-6 rounded-lg">
+              <div className="text-blue-600 dark:text-blue-400">
                 <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
                 </svg>
               </div>
-              <h3 className="mt-4 text-lg font-medium text-gray-900">Custom Engraving</h3>
-              <p className="mt-2 text-base text-gray-500">
+              <h3 className="mt-4 text-lg font-medium text-gray-900 dark:text-white">Custom Engraving</h3>
+              <p className="mt-2 text-base text-gray-500 dark:text-gray-300">
                 Precision laser engraving for perfect personalization.
               </p>
             </div>
@@ -137,15 +156,15 @@ const AcrylicAwards: React.FC = () => {
       </section>
 
       {/* Products Section */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-muted dark:bg-gray-900">
         <div className={STYLE_VARIANTS.container.default}>
-          <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white text-center mb-12">
             Featured Acrylic Awards
           </h2>
           <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3">
             {awards.map((award) => (
               <div key={award.id} className="group">
-                <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div className="bg-background dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
                   <div className="relative h-80">
                     <Image
                       src={award.image}
@@ -155,15 +174,15 @@ const AcrylicAwards: React.FC = () => {
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-lg font-medium text-gray-900">{award.name}</h3>
-                    <p className="mt-2 text-gray-500">{award.description}</p>
+                    <h3 className="text-lg font-medium text-gray-900 dark:text-white">{award.name}</h3>
+                    <p className="mt-2 text-gray-500 dark:text-gray-300">{award.description}</p>
                     <div className="mt-4">
-                      <span className="text-blue-600 font-medium">{award.price}</span>
+                      <span className="text-blue-600 dark:text-blue-400 font-medium">{award.price}</span>
                     </div>
                     <div className="mt-4 space-y-2">
                       {award.features.map((feature, index) => (
-                        <div key={index} className="flex items-center text-sm text-gray-500">
-                          <svg className="h-4 w-4 text-blue-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div key={index} className="flex items-center text-sm text-gray-500 dark:text-gray-300">
+                          <svg className="h-4 w-4 text-blue-600 dark:text-blue-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
                           {feature}
@@ -179,18 +198,18 @@ const AcrylicAwards: React.FC = () => {
       </section>
 
       {/* Sample Designs Section */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-background dark:bg-gray-800">
         <div className={STYLE_VARIANTS.container.default}>
-          <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-8">
+          <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white text-center mb-8">
             Contemporary Acrylic Collection
           </h2>
-          <p className="text-lg text-gray-500 text-center mb-12 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-500 dark:text-gray-300 text-center mb-12 max-w-3xl mx-auto">
             Explore our innovative acrylic award designs, featuring modern aesthetics and creative use of light and transparency.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {sampleDesigns.map((design) => (
               <div key={design.id} className="group relative">
-                <div className="relative h-96 w-full overflow-hidden rounded-lg bg-white">
+                <div className="relative h-96 w-full overflow-hidden rounded-lg bg-background dark:bg-gray-700">
                   <Image
                     src={design.image}
                     alt={design.name}
@@ -208,7 +227,7 @@ const AcrylicAwards: React.FC = () => {
           <div className="text-center mt-12">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
+              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400"
             >
               Request Custom Design
             </Link>
@@ -217,7 +236,7 @@ const AcrylicAwards: React.FC = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="bg-blue-700">
+      <section className="bg-blue-700 dark:bg-blue-800">
         <div className={`${STYLE_VARIANTS.container.default} py-12 sm:py-16`}>
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
@@ -229,9 +248,9 @@ const AcrylicAwards: React.FC = () => {
             <div className="mt-8">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-blue-50"
+                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 dark:text-blue-900 bg-white hover:bg-blue-50 dark:hover:bg-gray-100"
               >
-                Start Your Design
+                Contact Us Today
               </Link>
             </div>
           </div>
