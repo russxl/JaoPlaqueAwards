@@ -225,7 +225,7 @@ const About: React.FC = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Ready to Create Something Special?</h2>
             <p className="mt-4 text-xl text-gray-600 dark:text-gray-300">
-              Let's work together to create the perfect award for your recognition needs.
+              Let&apos;s work together to create the perfect award for your recognition needs.
             </p>
             <div className="mt-8">
               <Link

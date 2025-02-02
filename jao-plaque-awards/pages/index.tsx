@@ -4,12 +4,9 @@ import Link from 'next/link';
 import MainLayout from '../components/layout/MainLayout';
 import { HomeSkeleton } from '@/components/skeletons/HomeSkeleton';
 import { Button } from '@/components/ui/button';
-import { Award, getAwards } from '../lib/api/awards';
 
 const Home: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [awards, setAwards] = useState<Award[]>([]);
-  const [error, setError] = useState<string | null>(null);
 
   const clientLogos = [
     { src: '/images/hero-award.jpg', alt: 'Client 1', name: 'Company One' },
@@ -24,19 +21,12 @@ const Home: React.FC = () => {
   const duplicatedLogos = [...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos];
 
   useEffect(() => {
-    const fetchAwards = async () => {
-      try {
-        const data = await getAwards();
-        setAwards(data);
-      } catch (err) {
-        setError('Failed to fetch awards');
-        console.error(err);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+    // Simulate loading
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
 
-    fetchAwards();
+    return () => clearTimeout(timer);
   }, []);
 
   if (isLoading) {
