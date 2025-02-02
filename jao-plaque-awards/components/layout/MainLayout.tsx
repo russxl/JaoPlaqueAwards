@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import Navbar from '../ui/Navbar';
-import { STYLE_VARIANTS } from '../../types/references';
 import Footer from '../ui/Footer';
 
 interface MainLayoutProps {
