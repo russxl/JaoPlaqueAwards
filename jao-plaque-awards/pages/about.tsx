@@ -1,8 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import MainLayout from '../components/layout/MainLayout';
+import Link from 'next/link';
+import MainLayout from '@/components/layout/MainLayout';
+import { AboutSkeleton } from '@/components/skeletons/AboutSkeleton';
 
 const About: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <MainLayout>
+        <AboutSkeleton />
+      </MainLayout>
+    );
+  }
+
   const teamMembers = [
     {
       name: 'John Doe',
@@ -30,13 +51,13 @@ const About: React.FC = () => {
       description="Learn about our history, mission, and the team behind Jao Plaque Awards. Dedicated to creating exceptional recognition awards since 2000."
     >
       {/* Hero Section */}
-      <section className="bg-gray-50">
+      <section className="bg-muted dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="text-center">
-            <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
+            <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">
               About Jao Plaque Awards
             </h1>
-            <p className="mt-4 text-xl text-gray-500 max-w-3xl mx-auto">
+            <p className="mt-4 text-xl text-gray-500 dark:text-gray-300 max-w-3xl mx-auto">
               Crafting excellence into every award since 2000. We take pride in creating
               meaningful recognition pieces that celebrate achievements and inspire greatness.
             </p>
@@ -45,23 +66,21 @@ const About: React.FC = () => {
       </section>
 
       {/* Mission & Values */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-background dark:bg-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-extrabold text-gray-900">
+              <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white">
                 Our Mission & Values
               </h2>
-              <p className="mt-4 text-lg text-gray-500">
-                At Jao Plaque Awards, we believe in the power of recognition to inspire
-                and motivate. Our mission is to create exceptional awards that capture
-                the significance of achievement and create lasting memories.
+              <p className="mt-4 text-lg text-gray-500 dark:text-gray-300">
+                At JAO Plaque Awards & General Merchandise is to provide high-quality, affordable prints, awards, and souvenirs that inspire greatness and bring people together. We aim to be the top destination for exceptional products, supported by and serving our community.
               </p>
               <div className="mt-8 space-y-4">
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
                     <svg
-                      className="h-6 w-6 text-blue-600"
+                      className="h-6 w-6 text-blue-600 dark:text-blue-400"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -74,14 +93,14 @@ const About: React.FC = () => {
                       />
                     </svg>
                   </div>
-                  <p className="ml-3 text-lg text-gray-500">
+                  <p className="ml-3 text-lg text-gray-500 dark:text-gray-300">
                     Commitment to quality craftsmanship
                   </p>
                 </div>
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
                     <svg
-                      className="h-6 w-6 text-blue-600"
+                      className="h-6 w-6 text-blue-600 dark:text-blue-400"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -94,14 +113,14 @@ const About: React.FC = () => {
                       />
                     </svg>
                   </div>
-                  <p className="ml-3 text-lg text-gray-500">
+                  <p className="ml-3 text-lg text-gray-500 dark:text-gray-300">
                     Innovation in design and materials
                   </p>
                 </div>
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
                     <svg
-                      className="h-6 w-6 text-blue-600"
+                      className="h-6 w-6 text-blue-600 dark:text-blue-400"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -114,7 +133,7 @@ const About: React.FC = () => {
                       />
                     </svg>
                   </div>
-                  <p className="ml-3 text-lg text-gray-500">
+                  <p className="ml-3 text-lg text-gray-500 dark:text-gray-300">
                     Exceptional customer service
                   </p>
                 </div>
@@ -133,13 +152,13 @@ const About: React.FC = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-muted dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-gray-900">
+            <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white">
               Meet Our Team
             </h2>
-            <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">
+            <p className="mt-4 text-lg text-gray-500 dark:text-gray-300 max-w-2xl mx-auto">
               Our talented team brings together years of experience and passion
               for creating exceptional awards.
             </p>
@@ -158,11 +177,11 @@ const About: React.FC = () => {
                 </div>
                 <div className="space-y-2">
                   <div className="text-lg leading-6 font-medium space-y-1">
-                    <h3 className="text-gray-900">{member.name}</h3>
-                    <p className="text-blue-600">{member.role}</p>
+                    <h3 className="text-gray-900 dark:text-white">{member.name}</h3>
+                    <p className="text-blue-600 dark:text-blue-400">{member.role}</p>
                   </div>
                   <div className="text-base">
-                    <p className="text-gray-500">{member.bio}</p>
+                    <p className="text-gray-500 dark:text-gray-300">{member.bio}</p>
                   </div>
                 </div>
               </div>
@@ -172,32 +191,49 @@ const About: React.FC = () => {
       </section>
 
       {/* History Section */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-background dark:bg-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-extrabold text-gray-900">
+            <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white">
               Our History
             </h2>
-            <p className="mt-4 text-lg text-gray-500">
-              Founded in 2000, Jao Plaque Awards has grown from a small family
-              business to a leading provider of custom awards and recognition
-              products. Our commitment to quality and customer satisfaction has
-              earned us the trust of countless organizations and individuals
-              across the country.
+            <p className="mt-4 text-lg text-gray-500 dark:text-gray-300">
+              At JAO Plaque Awards, we began our journey in December 2020, amidst the challenges of the pandemic. Our founder, who previously worked as a sales agent for an awards supplier, saw an opportunity in this industry and teamed up with their family and partner to learn how to create quality, unique awards. Recognizing the potential for growth in this field, we decided to bring this business to the Rizal area and have been proud to serve clients in surrounding communities.
+            </p>
+           
+            <div className="mt-8 flex flex-col sm:flex-row justify-center items-center space-y-6 sm:space-y-0">
+              <div className="inline-flex items-center">
+                <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">3+</span>
+                <span className="ml-2 text-gray-500 dark:text-gray-300">Years of Excellence</span>
+              </div>
+              <div className="inline-flex items-center sm:ml-8">
+                <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">1,000+</span>
+                <span className="ml-2 text-gray-500 dark:text-gray-300">Awards Crafted</span>
+              </div>
+              <div className="inline-flex items-center sm:ml-8">
+                <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">500+</span>
+                <span className="ml-2 text-gray-500 dark:text-gray-300">Happy Clients</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-muted dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Ready to Create Something Special?</h2>
+            <p className="mt-4 text-xl text-gray-600 dark:text-gray-300">
+              Let's work together to create the perfect award for your recognition needs.
             </p>
             <div className="mt-8">
-              <div className="inline-flex items-center">
-                <span className="text-2xl font-bold text-blue-600">20+</span>
-                <span className="ml-2 text-gray-500">Years of Excellence</span>
-              </div>
-              <div className="inline-flex items-center ml-8">
-                <span className="text-2xl font-bold text-blue-600">10,000+</span>
-                <span className="ml-2 text-gray-500">Awards Crafted</span>
-              </div>
-              <div className="inline-flex items-center ml-8">
-                <span className="text-2xl font-bold text-blue-600">5,000+</span>
-                <span className="ml-2 text-gray-500">Happy Clients</span>
-              </div>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400"
+              >
+                Contact Us Today
+              </Link>
             </div>
           </div>
         </div>
