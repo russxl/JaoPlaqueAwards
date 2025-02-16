@@ -1,0 +1,73 @@
+{
+  "ai": {
+    "enabled": true,
+    "autoComplete": true,
+    "autoImport": true,
+    "autoTest": false
+  },
+  "editor": {
+    "formatOnSave": true,
+    "formatOnPaste": true,
+    "tabSize": 2,
+    "insertSpaces": true,
+    "wordWrap": "on",
+    "rulers": [80, 100]
+  },
+  "typescript": {
+    "suggestionActions": {
+      "enabled": true,
+      "includeCompletionsForModuleExports": true,
+      "includeCompletionsForImportStatements": true
+    },
+    "validate": true,
+    "format": {
+      "enabled": true,
+      "insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+      "insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true
+    }
+  },
+  "search": {
+    "exclude": [
+      "**/.git",
+      "**/node_modules",
+      "**/.next",
+      "**/out",
+      "**/build",
+      "**/dist",
+      "**/.coverage",
+      "**/public/images/**/*.{jpg,png,gif}",
+      "!**/public/images/logo/*"
+    ],
+    "useIgnoreFiles": true,
+    "followSymlinks": false
+  },
+  "files": {
+    "watcherExclude": {
+      "**/node_modules/**": true,
+      "**/.git/**": true,
+      "**/.next/**": true,
+      "**/out/**": true,
+      "**/build/**": true,
+      "**/dist/**": true,
+      "**/coverage/**": true,
+      "**/public/images/**/*.{jpg,png,gif}": true,
+      "!**/public/images/logo/*": false
+    },
+    "associations": {
+      "*.tsx": "typescriptreact",
+      "*.ts": "typescript",
+      "*.mdx": "markdown",
+      "*.css": "css",
+      "*.module.css": "css"
+    }
+  },
+  "git": {
+    "enabled": true,
+    "autoFetch": true,
+    "autoPull": false,
+    "confirmSync": true
+  },
+  "telemetry": {
+    "enabled": false
+  }
+} 
