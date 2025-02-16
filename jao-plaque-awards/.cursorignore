@@ -1,0 +1,69 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+.npm/
+
+# Next.js build output
+.next/
+out/
+build/
+dist/
+
+# Cache directories
+.cache/
+.eslintcache
+.tsbuildinfo
+
+# Environment files
+.env*
+!.env.example
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/Editor directories
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test coverage
+coverage/
+
+# Temporary files
+*.log
+*.tmp
+.temp/
+
+# Large media files
+*.mp4
+*.tiff
+*.avi
+*.flv
+*.mov
+*.wmv
+
+# Package files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Optional: Specific to your project
+public/images/**/*.jpg
+public/images/**/*.png
+public/images/**/*.gif
+!public/images/logo/*
+
+# Storybook
+storybook-static/
+
+# PWA files
+public/sw.js
+public/workbox-*.js 

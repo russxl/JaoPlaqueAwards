@@ -39,9 +39,7 @@ const Home: React.FC = () => {
 
   return (
     <MainLayout>
-      {/* Hero Section */}
       <div className="relative w-full h-[80vh] sm:h-screen">
-        {/* Background Photo */}
         <div className="absolute inset-0">
           <Image
             src="/images/hero/hero-award.jpg"
@@ -74,18 +72,18 @@ const Home: React.FC = () => {
                 </p>
               </div>
               {/* Buttons */}
-              <div className="mt-8 sm:mt-10 gap-4 flex flex-col sm:flex-row justify-center items-center">
+              <div className="mt-8 sm:mt-10 gap-4 flex  sm:flex-row justify-center items-center">
                 <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-500 text-base w-full sm:w-auto">
                   <Link href="/contact">Get Started</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white/10 text-base w-full sm:w-auto">
+                <Button asChild size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-white/10 text-base w-full sm:w-auto">
                   <Link href="/about">Learn More</Link>
                 </Button>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </div> 
 
       <div className="container mx-auto px-6 sm:px-6 lg:px-8 py-8 sm:py-16 space-y-8 sm:space-y-16">
         {/* Featured Categories */}
