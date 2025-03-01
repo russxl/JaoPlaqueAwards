@@ -9,12 +9,12 @@ const Home: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const clientLogos = [
-    { src: '/images/hero-award.jpg', alt: 'Client 1', name: 'Company One' },
-    { src: '/images/wood-award.jpg', alt: 'Client 2', name: 'Company Two' },
-    { src: '/images/acrylic-award.jpg', alt: 'Client 3', name: 'Company Three' },
-    { src: '/images/glass-award.jpg', alt: 'Client 4', name: 'Company Four' },
-    { src: '/images/hero-award.jpg', alt: 'Client 5', name: 'Company Five' },
-    { src: '/images/wood-award.jpg', alt: 'Client 6', name: 'Company Six' },
+    { src: '/images/clients/company-one.svg', alt: 'Company One Logo', name: 'Company One' },
+    { src: '/images/clients/company-two.svg', alt: 'Company Two Logo', name: 'Company Two' },
+    { src: '/images/clients/company-three.svg', alt: 'Company Three Logo', name: 'Company Three' },
+    { src: '/images/clients/company-four.svg', alt: 'Company Four Logo', name: 'Company Four' },
+    { src: '/images/clients/company-five.svg', alt: 'Company Five Logo', name: 'Company Five' },
+    { src: '/images/clients/company-six.svg', alt: 'Company Six Logo', name: 'Company Six' },
   ];
 
   // Duplicate logos 4 times for a smoother infinite scroll
@@ -95,7 +95,7 @@ const Home: React.FC = () => {
             <div className="grid grid-cols-1 gap-y-8 sm:grid-cols-2 gap-x-6 lg:grid-cols-3">
               {/* Wood Awards */}
               <div className="group relative">
-                <div className="relative w-full h-64 sm:h-80 bg-background dark:bg-gray-700 rounded-lg overflow-hidden group-hover:opacity-75">
+                <div className="relative h-96">
                   <Image
                     src="/images/awards/wood/421242199_907613681372251_7925596225026725364_n.jpg"
                     alt="Wood plaque award"
@@ -116,7 +116,7 @@ const Home: React.FC = () => {
 
               {/* Acrylic Awards */}
               <div className="group relative">
-                <div className="relative w-full h-64 sm:h-80 bg-background dark:bg-gray-700 rounded-lg overflow-hidden group-hover:opacity-75">
+                <div className="relative h-96">
                   <Image
                     src="/images/awards/acrylic/457045122_1070631835070434_8721150671937125992_n.jpg"
                     alt="Acrylic award"
@@ -137,7 +137,7 @@ const Home: React.FC = () => {
 
               {/* Glass Awards */}
               <div className="group relative">
-                <div className="relative w-full h-64 sm:h-80 bg-background dark:bg-gray-700 rounded-lg overflow-hidden group-hover:opacity-75">
+                <div className="relative h-96">
                   <Image
                     src="/images/awards/glass/435505105_966033095530309_6737523218719137883_n.jpg"
                     alt="Glass award"
@@ -179,7 +179,7 @@ const Home: React.FC = () => {
                         src={logo.src}
                         alt={logo.alt}
                         width={120}
-                        height={60}
+                        height={0}
                         className="object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
                       />
                       <div className="absolute inset-0 bg-background/80 dark:bg-gray-800/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
