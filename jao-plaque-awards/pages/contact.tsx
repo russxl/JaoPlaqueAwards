@@ -10,9 +10,9 @@ import { ContactSkeleton } from "@/components/skeletons/ContactSkeleton";
 
 const contactInfo = {
   facebook: "https://facebook.com/jaoplaqueawards",
-  phone: "+1 (555) 123-4567",
-  email: "info@jaoplaqueawards.com",
-  address: "123 Award Plaza, Suite 100, Los Angeles, CA 90001",
+  phone: "+63 936 458 4647",
+  email: "jao.trophy@gmail.com",
+  address: "17 F Dimanlig St",
   mapUrl: "https://www.google.com/maps/embed/v1/place?q=jao+plaque&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
 };
 
@@ -65,7 +65,7 @@ const Contact = () => {
                       <p className="text-sm text-muted-foreground dark:text-gray-300">Follow us on Facebook</p>
                       <Button variant="link" className="h-auto p-0 dark:text-blue-400 dark:hover:text-blue-300" asChild>
                         <a href={contactInfo.facebook} target="_blank" rel="noopener noreferrer">
-                          @jaoplaqueawards
+                          Jao Plaque Awards
                         </a>
                       </Button>
                     </div>
@@ -109,9 +109,11 @@ const Contact = () => {
                     <Button size="icon" className="rounded-full dark:bg-blue-500 dark:hover:bg-blue-600">
                       <FaMapMarkerAlt className="w-5 h-5" />
                     </Button>
-                    <div>
+                    <div className="flex flex-col">
                       <p className="text-sm text-muted-foreground dark:text-gray-300">Visit our store</p>
-                      <p className="dark:text-white">{contactInfo.address}</p>
+                      <a href={''} target="_blank" rel="noopener noreferrer">
+                          {contactInfo.address}
+                        </a>
                     </div>
                   </div>
                 </CardContent>
@@ -124,13 +126,8 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent className="space-y-2">
                   <p className="flex justify-between">
-                    <span className="text-muted-foreground dark:text-gray-300">Monday - Friday</span>
-                    <span className="dark:text-white">9:00 AM - 6:00 PM PST</span>
-                  </p>
-                  <Separator className="dark:bg-gray-700" />
-                  <p className="flex justify-between">
-                    <span className="text-muted-foreground dark:text-gray-300">Saturday</span>
-                    <span className="dark:text-white">10:00 AM - 4:00 PM PST</span>
+                    <span className="text-muted-foreground dark:text-gray-300">Monday - Saturday</span>
+                    <span className="dark:text-white">9:00 AM - 5:00 PM</span>
                   </p>
                   <Separator className="dark:bg-gray-700" />
                   <p className="flex justify-between">
