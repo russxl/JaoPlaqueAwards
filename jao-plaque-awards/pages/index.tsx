@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import MainLayout from '../components/layout/MainLayout';
-import { HomeSkeleton } from '@/components/skeletons/HomeSkeleton';
-import { Button } from '@/components/ui/button';
+import MainLayout from '../app/components/layout/MainLayout';
+import { HomeSkeleton } from '@/app/components/skeletons/HomeSkeleton';
+import { Button } from '@/app/components/ui/button';
 
 const Home: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);

@@ -1,12 +1,12 @@
 "use client";
 import { useEffect, useState } from 'react';
-import MainLayout from '../components/layout/MainLayout';
+import MainLayout from '../app/components/layout/MainLayout';
 import { FaFacebook, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import { FiMail } from 'react-icons/fi';
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import { ContactSkeleton } from "@/components/skeletons/ContactSkeleton";
+import { Card, CardHeader, CardTitle, CardContent } from "@/app/components/ui/card";
+import { Button } from "@/app/components/ui/button";
+import { Separator } from "@/app/components/ui/separator";
+import { ContactSkeleton } from "@/app/components/skeletons/ContactSkeleton";
 
 const contactInfo = {
   facebook: "https://facebook.com/jaoplaqueawards",
