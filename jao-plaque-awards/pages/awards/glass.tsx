@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import MainLayout from '../../components/layout/MainLayout';
+import MainLayout from '../../app/components/layout/MainLayout';
 import { STYLE_VARIANTS } from '../../types/references';
-import { AwardsSkeleton } from '@/components/skeletons/AwardsSkeleton';
+import { AwardsSkeleton } from '@/app/components/skeletons/AwardsSkeleton';
 
 const GlassAwards: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/app/components/ui/button';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import { getInitialDarkMode, toggleDarkMode } from '@/lib/darkMode';
 

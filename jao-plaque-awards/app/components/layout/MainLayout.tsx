@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Navbar from '../ui/Navbar';
 import Footer from '../ui/Footer';
-import Chatbot from '@/components/Chatbot';
+import Chatbot from '@/app/components/Chatbot';
 import { Button } from '../ui/button';
 import { useState } from 'react';
 interface MainLayoutProps {

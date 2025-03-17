@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import MainLayout from '@/components/layout/MainLayout';
-import { AboutSkeleton } from '@/components/skeletons/AboutSkeleton';
+import MainLayout from '@/app/components/layout/MainLayout';
+import { AboutSkeleton } from '@/app/components/skeletons/AboutSkeleton';
 
 const About: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
