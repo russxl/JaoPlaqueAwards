@@ -140,9 +140,6 @@ h4 {
   @apply scroll-m-20 text-xl font-semibold tracking-tight text-primary dark:text-secondary;
 }
 
-p {
-  @apply leading-7 [&:not(:first-child)]:mt-6;
-}
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
