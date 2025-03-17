@@ -3,6 +3,9 @@ import { useEffect } from 'react';
 import { getInitialDarkMode } from '@/lib/darkMode';
 import { inter } from '../lib/fonts';
 import '../styles/globals.css';
+import { ConvexProvider, ConvexReactClient } from "convex/react";
+
+const convex = new ConvexReactClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -14,8 +17,10 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <main className={`${inter.className}`}>
-      <Component {...pageProps} />
-    </main>
+    <ConvexProvider client={convex}>
+      <main className={`${inter.className}`}>
+        <Component {...pageProps} />
+      </main>
+    </ConvexProvider>
   );
-} 
+}
