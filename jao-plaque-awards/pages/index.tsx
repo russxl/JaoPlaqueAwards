@@ -9,12 +9,12 @@ const Home: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const clientLogos = [
-    { src: '/images/clients/company-one.svg', alt: 'Company One Logo', name: 'Company One' },
-    { src: '/images/clients/company-two.svg', alt: 'Company Two Logo', name: 'Company Two' },
-    { src: '/images/clients/company-three.svg', alt: 'Company Three Logo', name: 'Company Three' },
-    { src: '/images/clients/company-four.svg', alt: 'Company Four Logo', name: 'Company Four' },
-    { src: '/images/clients/company-five.svg', alt: 'Company Five Logo', name: 'Company Five' },
-    { src: '/images/clients/company-six.svg', alt: 'Company Six Logo', name: 'Company Six' },
+    { src: '/images/clients/1.png', alt: 'Company One Logo', name: 'Company One' },
+    { src: '/images/clients/2.png', alt: 'Company Two Logo', name: 'Company Two' },
+    { src: '/images/clients/3.png', alt: 'Company Three Logo', name: 'Company Three' },
+    { src: '/images/clients/4.png', alt: 'Company Four Logo', name: 'Company Four' },
+    { src: '/images/clients/5.png', alt: 'Company Five Logo', name: 'Company Five' },
+    { src: '/images/clients/6.png', alt: 'Company Six Logo', name: 'Company Six' },
   ];
 
   // Duplicate logos 4 times for a smoother infinite scroll
@@ -180,7 +180,7 @@ const Home: React.FC = () => {
                         alt={logo.alt}
                         width={120}
                         height={0}
-                        className="object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                        className="object-contain filter group-hover:grayscale-0 transition-all duration-300"
                       />
                       <div className="absolute inset-0 bg-background/80 dark:bg-gray-800/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <p className="text-primary dark:text-blue-400 font-medium text-sm">{logo.name}</p>

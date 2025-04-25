@@ -25,68 +25,42 @@ const GlassAwards: React.FC = () => {
     );
   }
 
-  const awards = [
-    {
-      id: 1,
-      name: 'Crystal Peak Award',
-      description: 'Elegant crystal glass award with a dramatic peak design and polished finish.',
-      image: '/images/awards/glass/crystal-peak.jpg',
-      price: '$149.99',
-      features: ['Premium crystal glass', 'Polished finish', 'Custom engraving available', 'Presentation box included'],
-    },
-    {
-      id: 2,
-      name: 'Sapphire Wave Trophy',
-      description: 'Stunning blue-tinted glass award with a flowing wave design.',
-      image: '/images/awards/glass/sapphire-wave.jpg',
-      price: '$199.99',
-      features: ['Blue-tinted crystal', 'Wave design', 'LED base option', 'Deluxe gift box'],
-    },
-    {
-      id: 3,
-      name: 'Diamond Pinnacle',
-      description: 'Premium diamond-cut glass award with multiple facets for maximum brilliance.',
-      image: '/images/awards/glass/diamond-pinnacle.jpg',
-      price: '$249.99',
-      features: ['Diamond-cut edges', 'Multi-faceted design', 'Premium weight', 'Luxury packaging'],
-    },
-  ];
-
+ 
   const sampleDesigns = [
     {
       id: 1,
       name: 'Crystal Pinnacle',
-      image: '/images/awards/glass/samples/crystal-pinnacle.jpg',
+      image: '/images/awards/glass/1.jpg',
       description: 'Clear crystal with geometric cuts',
     },
     {
       id: 2,
       name: 'Azure Wave',
-      image: '/images/awards/glass/samples/azure-wave.jpg',
+      image: '/images/awards/glass/2.jpg',
       description: 'Blue-tinted glass with wave pattern',
     },
     {
       id: 3,
       name: 'Diamond Summit',
-      image: '/images/awards/glass/samples/diamond-summit.jpg',
+      image: '/images/awards/glass/3.jpg',
       description: 'Multi-faceted crystal peak design',
     },
     {
       id: 4,
       name: 'Celestial Star',
-      image: '/images/awards/glass/samples/celestial-star.jpg',
+      image: '/images/awards/glass/4.jpg',
       description: 'Star-shaped crystal with etching',
     },
     {
       id: 5,
       name: 'Royal Column',
-      image: '/images/awards/glass/samples/royal-column.jpg',
+      image: '/images/awards/glass/5.jpg',
       description: 'Elegant crystal column with base',
     },
     {
       id: 6,
       name: 'Infinity Spiral',
-      image: '/images/awards/glass/samples/infinity-spiral.jpg',
+      image: '/images/awards/glass/6.jpg',
       description: 'Spiral design with metallic accents',
     },
   ];
@@ -156,47 +130,7 @@ const GlassAwards: React.FC = () => {
         </div>
       </section>
 
-      {/* Products Section */}
-      <section className="py-12 bg-muted dark:bg-gray-900">
-        <div className={STYLE_VARIANTS.container.default}>
-          <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white text-center mb-12">
-            Featured Glass Awards
-          </h2>
-          <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3">
-            {awards.map((award) => (
-              <div key={award.id} className="group">
-                <div className="bg-background dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
-                  <div className="relative h-80">
-                    <Image
-                      src={award.image}
-                      alt={award.name}
-                      fill
-                      className="object-cover object-center"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-medium text-gray-900 dark:text-white">{award.name}</h3>
-                    <p className="mt-2 text-gray-500 dark:text-gray-300">{award.description}</p>
-                    <div className="mt-4">
-                      <span className="text-blue-600 dark:text-blue-400 font-medium">{award.price}</span>
-                    </div>
-                    <div className="mt-4 space-y-2">
-                      {award.features.map((feature, index) => (
-                        <div key={index} className="flex items-center text-sm text-gray-500 dark:text-gray-300">
-                          <svg className="h-4 w-4 text-blue-600 dark:text-blue-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          {feature}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+   
 
       {/* Sample Designs Section */}
       <section className="py-12 bg-background dark:bg-gray-800">
@@ -237,7 +171,7 @@ const GlassAwards: React.FC = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="bg-blue-700 dark:bg-blue-800">
+      <section className="bg-blue-700 dark:bg-blue-800 mx-0 lg:mx-12">
         <div className={`${STYLE_VARIANTS.container.default} py-12 sm:py-16`}>
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-extrabold text-white sm:text-4xl">

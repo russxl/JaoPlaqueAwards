@@ -39,3 +39,33 @@ export const updateMessage = mutation({
     });
   },
 });
+
+
+export const deleteMessage = mutation({
+  args: { id: v.id("messages") },
+  handler: async (ctx, args) => {
+    const { id } = args;
+    
+    // Check if message exists before deleting
+    const message = await ctx.db.get(args.id);
+    if (!message) {
+      return; // Silently skip if message doesn't exist
+    }
+    
+    await ctx.db.delete(id);
+  },
+});
+
+export const deleteAllMessages = mutation({
+  args: {},
+  handler: async (ctx) => {
+    const messages = await ctx.db
+      .query("messages")
+      .collect();
+    
+    for (const message of messages) {
+      await ctx.db.delete(message._id);
+    }
+    return true;
+  },
+});

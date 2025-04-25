@@ -9,7 +9,7 @@ import { Input } from "@/app/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { ScrollArea } from "./ui/scroll-area";
 import { Avatar, AvatarFallback } from "@/app/components/ui/avatar";
-import { X } from "lucide-react";
+import { X, Trash2 } from "lucide-react";
 
 interface ChatbotProps {
   onClose: () => void;
@@ -26,6 +26,7 @@ export default function Chatbot({ onClose }: ChatbotProps) {
   const messages = useQuery(api.chat.getMessages) || [];
   const addMessage = useMutation(api.chat.addMessage);
   const updateMessage = useMutation(api.chat.updateMessage);
+  const deleteAllMessages = useMutation(api.chat.deleteAllMessages);
 
   // Improved scroll to bottom effect
   useEffect(() => {
@@ -47,6 +48,15 @@ export default function Chatbot({ onClose }: ChatbotProps) {
       scrollToBottom();
     }
   }, [messages, streamingContent]);
+
+  // Add effect to check for reset flag in localStorage
+  useEffect(() => {
+    const shouldReset = localStorage.getItem('chatbot_reset');
+    if (shouldReset === 'true') {
+      deleteAllMessages();
+      localStorage.setItem('chatbot_reset', 'false');
+    }
+  }, [deleteAllMessages]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -122,18 +132,47 @@ export default function Chatbot({ onClose }: ChatbotProps) {
     }
   };
 
+  const handleReset = async () => {
+    try {
+      setIsLoading(true);
+      await deleteAllMessages();
+      
+      // Clear local states
+      setStreamingContent("");
+      setStreamingMessageId(null);
+      localStorage.setItem('chatbot_reset', 'true');
+      
+    } catch (error) {
+      console.error("Reset Error:", error);
+      alert("Failed to reset chat");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <Card className="w-[400px] h-[600px] flex flex-col relative z-50 shadow-lg">
       <CardHeader className="border-b p-3 flex flex-row items-center justify-between">
         <CardTitle className="text-xl font-bold">AI Chat Assistant</CardTitle>
-        <Button 
-          variant="ghost" 
-          size="icon" 
-          onClick={onClose}
-          className="h-8 w-8 p-0"
-        >
-          <X className="h-4 w-4" />
-        </Button>
+        <div className="flex gap-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={handleReset}
+            className="h-8 w-8 p-0"
+            title="Reset Chat"
+          >
+            <Trash2 className="h-4 w-4" />
+          </Button>
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            onClick={onClose}
+            className="h-8 w-8 p-0"
+          >
+            <X className="h-4 w-4" />
+          </Button>
+        </div>
       </CardHeader>
       
       <ScrollArea 
@@ -206,3 +245,4 @@ export default function Chatbot({ onClose }: ChatbotProps) {
     </Card>
   );
 }
+

@@ -24,68 +24,43 @@ const AcrylicAwards: React.FC = () => {
       </MainLayout>
     );
   }
-  const awards = [
-    {
-      id: 1,
-      name: 'Crystal Clear Star',
-      description: 'Modern star-shaped acrylic award with beveled edges and crystal-clear finish.',
-      image: '/images/awards/acrylic/crystal-star.jpg',
-      price: '$89.99',
-      features: ['Premium clear acrylic', 'Beveled edges', 'Freestanding design', 'Gift box included'],
-    },
-    {
-      id: 2,
-      name: 'Frost Peak Trophy',
-      description: 'Elegant frosted acrylic award with a contemporary mountain peak design.',
-      image: '/images/awards/acrylic/frost-peak.jpg',
-      price: '$119.99',
-      features: ['Frosted finish', 'Modern design', 'LED base compatible', 'Custom size options'],
-    },
-    {
-      id: 3,
-      name: 'Color Flame Award',
-      description: 'Vibrant colored acrylic award with a dynamic flame design.',
-      image: '/images/awards/acrylic/color-flame.jpg',
-      price: '$139.99',
-      features: ['Multiple color options', 'Flame design', 'High polish finish', 'Deluxe packaging'],
-    },
-  ];
+
 
   const sampleDesigns = [
     {
       id: 1,
       name: 'Modern Hexagon',
-      image: '/images/awards/acrylic/samples/modern-hexagon.jpg',
+      image: '/images/awards/acrylic/1.jpg',
       description: 'Contemporary hexagonal design with LED base',
     },
     {
       id: 2,
       name: 'Frost Peak',
-      image: '/images/awards/acrylic/samples/frost-peak.jpg',
+      image: '/images/awards/acrylic/2.jpg',
       description: 'Frosted acrylic with geometric patterns',
     },
     {
       id: 3,
       name: 'Rainbow Arc',
-      image: '/images/awards/acrylic/samples/rainbow-arc.jpg',
+      image: '/images/awards/acrylic/3.jpg',
       description: 'Multi-colored acrylic with curved design',
     },
     {
       id: 4,
       name: 'Tech Cube',
-      image: '/images/awards/acrylic/samples/tech-cube.jpg',
+      image: '/images/awards/acrylic/4.jpg',
       description: 'Clear acrylic cube with 3D etching',
     },
     {
       id: 5,
       name: 'Prism Tower',
-      image: '/images/awards/acrylic/samples/prism-tower.jpg',
+      image: '/images/awards/acrylic/5.jpg',
       description: 'Layered acrylic with prismatic effect',
     },
     {
       id: 6,
       name: 'Digital Wave',
-      image: '/images/awards/acrylic/samples/digital-wave.jpg',
+      image: '/images/awards/acrylic/6.jpg',
       description: 'Modern wave design with digital pattern',
     },
   ];
@@ -111,7 +86,6 @@ const AcrylicAwards: React.FC = () => {
           </div>
         </div>
       </section>
-
       {/* Features Section */}
       <section className="py-12 bg-background dark:bg-gray-800">
         <div className={STYLE_VARIANTS.container.default}>
@@ -156,47 +130,7 @@ const AcrylicAwards: React.FC = () => {
       </section>
 
       {/* Products Section */}
-      <section className="py-12 bg-muted dark:bg-gray-900">
-        <div className={STYLE_VARIANTS.container.default}>
-          <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white text-center mb-12">
-            Featured Acrylic Awards
-          </h2>
-          <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3">
-            {awards.map((award) => (
-              <div key={award.id} className="group">
-                <div className="bg-background dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
-                  <div className="relative h-80">
-                    <Image
-                      src={award.image}
-                      alt={award.name}
-                      fill
-                      className="object-cover object-center"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-medium text-gray-900 dark:text-white">{award.name}</h3>
-                    <p className="mt-2 text-gray-500 dark:text-gray-300">{award.description}</p>
-                    <div className="mt-4">
-                      <span className="text-blue-600 dark:text-blue-400 font-medium">{award.price}</span>
-                    </div>
-                    <div className="mt-4 space-y-2">
-                      {award.features.map((feature, index) => (
-                        <div key={index} className="flex items-center text-sm text-gray-500 dark:text-gray-300">
-                          <svg className="h-4 w-4 text-blue-600 dark:text-blue-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          {feature}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      
       {/* Sample Designs Section */}
       <section className="py-12 bg-background dark:bg-gray-800">
         <div className={STYLE_VARIANTS.container.default}>
