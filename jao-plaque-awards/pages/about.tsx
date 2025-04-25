@@ -221,7 +221,7 @@ const About: React.FC = () => {
 
       {/* CTA Section */}
       <section className="py-16 bg-muted dark:bg-gray-900">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 sm:px-6 lg:px-8 py-8 sm:py-16">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Ready to Create Something Special?</h2>
             <p className="mt-4 text-xl text-gray-600 dark:text-gray-300">
