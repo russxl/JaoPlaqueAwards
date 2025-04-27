@@ -1,24 +1,53 @@
-import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import MainLayout from '../app/components/layout/MainLayout';
-import { HomeSkeleton } from '@/app/components/skeletons/HomeSkeleton';
-import { Button } from '@/app/components/ui/button';
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import MainLayout from "../app/components/layout/MainLayout";
+import { HomeSkeleton } from "@/app/components/skeletons/HomeSkeleton";
+import { Button } from "@/app/components/ui/button";
 
 const Home: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const clientLogos = [
-    { src: '/images/clients/1.png', alt: 'Company One Logo', name: 'Company One' },
-    { src: '/images/clients/2.png', alt: 'Company Two Logo', name: 'Company Two' },
-    { src: '/images/clients/3.png', alt: 'Company Three Logo', name: 'Company Three' },
-    { src: '/images/clients/4.png', alt: 'Company Four Logo', name: 'Company Four' },
-    { src: '/images/clients/5.png', alt: 'Company Five Logo', name: 'Company Five' },
-    { src: '/images/clients/6.png', alt: 'Company Six Logo', name: 'Company Six' },
+    {
+      src: "/images/clients/1.png",
+      alt: "Company One Logo",
+      name: "Company One",
+    },
+    {
+      src: "/images/clients/2.png",
+      alt: "Company Two Logo",
+      name: "Company Two",
+    },
+    {
+      src: "/images/clients/3.png",
+      alt: "Company Three Logo",
+      name: "Company Three",
+    },
+    {
+      src: "/images/clients/4.png",
+      alt: "Company Four Logo",
+      name: "Company Four",
+    },
+    {
+      src: "/images/clients/5.png",
+      alt: "Company Five Logo",
+      name: "Company Five",
+    },
+    {
+      src: "/images/clients/6.png",
+      alt: "Company Six Logo",
+      name: "Company Six",
+    },
   ];
 
   // Duplicate logos 4 times for a smoother infinite scroll
-  const duplicatedLogos = [...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos];
+  const duplicatedLogos = [
+    ...clientLogos,
+    ...clientLogos,
+    ...clientLogos,
+    ...clientLogos,
+  ];
 
   useEffect(() => {
     // Simulate loading
@@ -57,7 +86,9 @@ const Home: React.FC = () => {
         <div className="relative h-full z-10">
           <div className="container h-full flex items-center justify-center mx-auto px-6 sm:px-6 lg:px-8">
             <div className="max-w-2xl text-center">
-              <p className="text-blue-400 font-medium text-base">Crafting Excellence Since 2020</p>
+              <p className="text-blue-400 font-medium text-base">
+                Crafting Excellence Since 2020
+              </p>
               {/* Title */}
               <div className="mt-4 sm:mt-5 max-w-2xl">
                 <h1 className="scroll-m-20 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
@@ -67,23 +98,33 @@ const Home: React.FC = () => {
               {/* Description */}
               <div className="mt-4 sm:mt-6 max-w-3xl">
                 <p className="text-lg sm:text-xl text-gray-200">
-                  Transform achievements into lasting memories with our premium custom awards. 
-                  From elegant wood plaques to stunning crystal trophies.
+                  Transform achievements into lasting memories with our premium
+                  custom awards. From elegant wood plaques to stunning crystal
+                  trophies.
                 </p>
               </div>
               {/* Buttons */}
               <div className="mt-8 sm:mt-10 gap-4 flex  sm:flex-row justify-center items-center">
-                <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-500 text-base w-full sm:w-auto">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-blue-600 hover:bg-blue-500 text-base w-full sm:w-auto"
+                >
                   <Link href="/contact">Get Started</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-white/10 text-base w-full sm:w-auto">
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="bg-transparent text-white border-white hover:bg-white/10 text-base w-full sm:w-auto"
+                >
                   <Link href="/about">Learn More</Link>
                 </Button>
               </div>
             </div>
           </div>
         </div>
-      </div> 
+      </div>
 
       <div className="container mx-auto px-6 sm:px-6 lg:px-8 py-8 sm:py-16 space-y-8 sm:space-y-16">
         {/* Featured Categories */}
@@ -97,7 +138,7 @@ const Home: React.FC = () => {
               <div className="group relative">
                 <div className="relative h-96">
                   <Image
-                    src="/images/awards/wood/421242199_907613681372251_7925596225026725364_n.jpg"
+                    src="/images/awards/wood/5.jpg"
                     alt="Wood plaque award"
                     fill
                     className="object-cover"
@@ -111,14 +152,16 @@ const Home: React.FC = () => {
                     Wood Awards
                   </Link>
                 </h3>
-                <p className="text-base font-semibold text-gray-900 dark:text-white">Timeless elegance crafted from premium hardwoods</p>
+                <p className="text-base font-semibold text-gray-900 dark:text-white">
+                  Timeless elegance crafted from premium hardwoods
+                </p>
               </div>
 
               {/* Acrylic Awards */}
               <div className="group relative">
                 <div className="relative h-96">
                   <Image
-                    src="/images/awards/acrylic/457045122_1070631835070434_8721150671937125992_n.jpg"
+                    src="/images/awards/acrylic/4.jpg"
                     alt="Acrylic award"
                     fill
                     className="object-cover"
@@ -132,14 +175,16 @@ const Home: React.FC = () => {
                     Acrylic Awards
                   </Link>
                 </h3>
-                <p className="text-base font-semibold text-gray-900 dark:text-white">Modern designs with crystal-clear clarity</p>
+                <p className="text-base font-semibold text-gray-900 dark:text-white">
+                  Modern designs with crystal-clear clarity
+                </p>
               </div>
 
               {/* Glass Awards */}
               <div className="group relative">
                 <div className="relative h-96">
                   <Image
-                    src="/images/awards/glass/435505105_966033095530309_6737523218719137883_n.jpg"
+                    src="/images/awards/glass/2.jpg"
                     alt="Glass award"
                     fill
                     className="object-cover"
@@ -153,7 +198,9 @@ const Home: React.FC = () => {
                     Glass Awards
                   </Link>
                 </h3>
-                <p className="text-base font-semibold text-gray-900 dark:text-white">Sophisticated glass creations that shine</p>
+                <p className="text-base font-semibold text-gray-900 dark:text-white">
+                  Sophisticated glass creations that shine
+                </p>
               </div>
             </div>
           </div>
@@ -171,7 +218,7 @@ const Home: React.FC = () => {
               <div className="relative overflow-hidden">
                 <div className="flex space-x-6 sm:space-x-8 animate-scroll whitespace-nowrap">
                   {duplicatedLogos.map((logo, index) => (
-                    <div 
+                    <div
                       key={index}
                       className="flex-none w-[150px] sm:w-[200px] h-[80px] sm:h-[100px] relative bg-background dark:bg-gray-800 rounded-lg shadow-sm p-4 flex items-center justify-center group hover:shadow-md transition-shadow duration-300"
                     >
@@ -183,7 +230,9 @@ const Home: React.FC = () => {
                         className="object-contain filter group-hover:grayscale-0 transition-all duration-300"
                       />
                       <div className="absolute inset-0 bg-background/80 dark:bg-gray-800/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <p className="text-primary dark:text-blue-400 font-medium text-sm">{logo.name}</p>
+                        <p className="text-primary dark:text-blue-400 font-medium text-sm">
+                          {logo.name}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -201,7 +250,8 @@ const Home: React.FC = () => {
                 Ready to Create Your Custom Award?
               </h2>
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-blue-100">
-                Contact us today to discuss your requirements and let us help you create the perfect recognition award.
+                Contact us today to discuss your requirements and let us help
+                you create the perfect recognition award.
               </p>
               <div className="mt-6 sm:mt-8">
                 <Link
@@ -219,4 +269,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home; 
+export default Home;
